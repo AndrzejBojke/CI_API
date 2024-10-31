@@ -1,1 +1,1 @@
-# CI_API
+# workshops
