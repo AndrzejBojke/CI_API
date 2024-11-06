@@ -8,7 +8,7 @@ import { baseUrl, userID } from "../helpers/data.js";
 describe("Api tests", () => {
   it("get request", async () => {
     //skip pomija
-    const response = await spec().get('${baseUrl}/BookStore/v1/Books')
+    const response = await spec().get(`${baseUrl}/BookStore/v1/Books`)
       .inspect();
     //console.log("nie działa dotenv?" + " " + process.env.SECRET_PASSWORD);
     expect(response.statusCode).to.eql(200);
@@ -29,10 +29,11 @@ describe("Api tests", () => {
 
   it.skip("Create a user", async () => {
     const response = await spec()
-      .post("https://demoqa.com/Account/v1/User")
+      .post(`${baseUrl}/Account/v1/User`)
       .withBody({
         userName: "Andrzej",
         password: process.env.SECRET_PASSWORD,
+        password: `${userID}`,
       })
       .inspect();
     expect(response.statusCode).to.eql(201);
