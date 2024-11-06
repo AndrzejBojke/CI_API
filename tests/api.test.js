@@ -33,7 +33,6 @@ describe("Api tests", () => {
       .withBody({
         userName: "Andrzej",
         password: process.env.SECRET_PASSWORD,
-        password: `${userID}`,
       })
       .inspect();
     expect(response.statusCode).to.eql(201);
