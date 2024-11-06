@@ -3,7 +3,7 @@
 
 name: api-tetst.js CI
 env:
-  SECRET_PASSWORD: ${{ secrets:PASSWORD }}
+  SECRET_PASSWORD: ${{ secrets.PASSWORD }}
 
 on:
   push:
